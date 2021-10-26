@@ -28,6 +28,7 @@ ff = "0.11"
 fpe = "0.5"
 group = "0.11"
 halo2 = "=0.1.0-beta.1"
+halo2_gadgets = { git = "https://github.com/zcash/halo2_gadgets", branch = "delete-orchard"}
 lazy_static = "1"
 memuse = { version = "0.2", features = ["nonempty"] }
 pasta_curves = "0.2.1"
@@ -63,10 +64,6 @@ test-dependencies = ["proptest"]
 
 [[bench]]
 name = "note_decryption"
-harness = false
-
-[[bench]]
-name = "primitives"
 harness = false
 
 [[bench]]

@@ -641,25 +641,23 @@ struct GateCells {
 #[cfg(test)]
 mod tests {
     use super::CommitIvkConfig;
-    use crate::{
-        circuit::gadget::{
-            ecc::chip::{EccChip, EccConfig},
-            sinsemilla::chip::SinsemillaChip,
-            utilities::{
-                lookup_range_check::LookupRangeCheckConfig, CellValue, UtilitiesInstructions, Var,
-            },
-        },
-        constants::{
-            fixed_bases::COMMIT_IVK_PERSONALIZATION, OrchardCommitDomains, OrchardFixedBases,
-            OrchardHashDomains, L_ORCHARD_BASE, T_Q,
-        },
-        primitives::sinsemilla::CommitDomain,
+    use crate::constants::{
+        fixed_bases::COMMIT_IVK_PERSONALIZATION, OrchardCommitDomains, OrchardFixedBases,
+        OrchardHashDomains, L_ORCHARD_BASE, T_Q,
     };
     use ff::PrimeFieldBits;
     use halo2::{
         circuit::{Layouter, SimpleFloorPlanner},
         dev::MockProver,
         plonk::{Circuit, ConstraintSystem, Error},
+    };
+    use halo2_gadgets::{
+        ecc::chip::{EccChip, EccConfig},
+        primitives::sinsemilla::CommitDomain,
+        sinsemilla::chip::SinsemillaChip,
+        utilities::{
+            lookup_range_check::LookupRangeCheckConfig, CellValue, UtilitiesInstructions, Var,
+        },
     };
     use pasta_curves::{arithmetic::FieldExt, pallas};
 

@@ -1432,22 +1432,9 @@ struct GateCells {
 #[cfg(test)]
 mod tests {
     use super::NoteCommitConfig;
-    use crate::{
-        circuit::gadget::{
-            ecc::{
-                chip::{EccChip, EccConfig},
-                NonIdentityPoint,
-            },
-            sinsemilla::chip::SinsemillaChip,
-            utilities::{
-                lookup_range_check::LookupRangeCheckConfig, CellValue, UtilitiesInstructions,
-            },
-        },
-        constants::{
-            fixed_bases::NOTE_COMMITMENT_PERSONALIZATION, OrchardCommitDomains, OrchardFixedBases,
-            OrchardHashDomains, L_ORCHARD_BASE, L_VALUE, T_Q,
-        },
-        primitives::sinsemilla::CommitDomain,
+    use crate::constants::{
+        fixed_bases::NOTE_COMMITMENT_PERSONALIZATION, OrchardCommitDomains, OrchardFixedBases,
+        OrchardHashDomains, L_ORCHARD_BASE, L_VALUE, T_Q,
     };
 
     use ff::{Field, PrimeField, PrimeFieldBits};
@@ -1456,6 +1443,15 @@ mod tests {
         circuit::{Layouter, SimpleFloorPlanner},
         dev::MockProver,
         plonk::{Circuit, ConstraintSystem, Error},
+    };
+    use halo2_gadgets::{
+        ecc::{
+            chip::{EccChip, EccConfig},
+            NonIdentityPoint,
+        },
+        primitives::sinsemilla::CommitDomain,
+        sinsemilla::chip::SinsemillaChip,
+        utilities::{lookup_range_check::LookupRangeCheckConfig, CellValue, UtilitiesInstructions},
     };
     use pasta_curves::{
         arithmetic::{CurveAffine, FieldExt},

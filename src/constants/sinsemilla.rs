@@ -146,7 +146,7 @@ mod tests {
         fixed_bases::{COMMIT_IVK_PERSONALIZATION, NOTE_COMMITMENT_PERSONALIZATION},
         sinsemilla::MERKLE_CRH_PERSONALIZATION,
     };
-    use crate::primitives::sinsemilla::{CommitDomain, HashDomain};
+    use halo2_gadgets::primitives::sinsemilla::{CommitDomain, HashDomain};
 
     use ff::PrimeField;
     use group::Curve;
