@@ -59,7 +59,7 @@ impl Config {
 
                 // k_{i} = z_{i} - 2⋅z_{i+1}
                 let k = z_next - Expression::Constant(pallas::Base::from_u64(2)) * z_prev;
-                // (k_i) ⋅ (k_i - 1) = 0
+                // (k_i) ⋅ (1 - k_i) = 0
                 let bool_check = bool_check(k.clone());
 
                 // base_y
