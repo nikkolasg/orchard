@@ -8,7 +8,8 @@ use std::{array, convert::TryInto, ops::Range};
 
 pub(crate) mod cond_swap;
 pub(crate) mod decompose_running_sum;
-pub(crate) mod lookup_range_check;
+/// documentation
+pub mod lookup_range_check;
 
 /// A variable representing a field element.
 #[derive(Copy, Clone, Debug)]

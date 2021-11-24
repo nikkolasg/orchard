@@ -10,6 +10,7 @@ use halo2::{
 
 use crate::circuit::gadget::utilities::UtilitiesInstructions;
 
+/// documentation
 pub mod chip;
 
 /// The set of circuit instructions required to use the ECC gadgets.

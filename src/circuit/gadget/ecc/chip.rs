@@ -200,6 +200,7 @@ impl UtilitiesInstructions<pallas::Base> for EccChip {
 }
 
 impl EccChip {
+    /// documentation
     pub fn construct(config: <Self as Chip<pallas::Base>>::Config) -> Self {
         Self { config }
     }

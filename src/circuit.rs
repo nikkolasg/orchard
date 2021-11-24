@@ -60,7 +60,8 @@ use std::convert::TryInto;
 
 use self::gadget::utilities::lookup_range_check::LookupRangeCheckConfig;
 
-pub(crate) mod gadget;
+/// gadget module
+pub mod gadget;
 
 /// Size of the Orchard circuit.
 const K: u32 = 11;
